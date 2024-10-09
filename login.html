@@ -51,7 +51,7 @@
 
     .form-group button {
         width: 100%;
-        padding: 10px;
+        padding: 8px;
         background-color: #903749;
         color: white;
         border: none;
@@ -154,23 +154,20 @@
 
     <script>
         function validateLogin(event) {
-            event.preventDefault(); // Prevent the form from submitting
+            event.preventDefault(); 
 
-            // Static email and password
             const staticEmail = "cherriemaerobles@gmail.com";
             const staticPassword = "cherrie123102";
 
-            // Get values from the input fields
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
-            // Check if the entered values match the static credentials
             if (email === staticEmail && password === staticPassword) {
                 alert("Login successful!");
-                // Clear the input fields after successful login
+
                 document.getElementById("email").value = '';
                 document.getElementById("password").value = '';
-                // Redirect to index.html after successful login
+  
                 window.location.href = "index.html";
             } else {
                 alert("Invalid email or password.");
