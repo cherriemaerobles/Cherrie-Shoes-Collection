@@ -107,7 +107,7 @@ img {
 }
 
 .btn.add-cart:hover {
-  background-color: gray; 
+  background-color: #F6E96B; 
   color: #000; 
 }
 
@@ -120,7 +120,7 @@ img {
 }
 
 .form-control-dark {
-  border-left: none; 
+  border-left: none; /* Remove border between icon and input */
 }
 
 .navbar {
