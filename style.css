@@ -11,6 +11,20 @@ body {
   padding-top: 80px;
 }
 
+.logo {
+  max-width: 80px; 
+  height: 80px; 
+  border-radius: 40px;
+  object-fit: cover;
+  margin-right: 15px; 
+  margin-left: 15px;
+}
+
+.nav-left {
+  display: flex; 
+  align-items: center; 
+}
+
 .navbar {
   display: flex; 
   justify-content: space-between; 
