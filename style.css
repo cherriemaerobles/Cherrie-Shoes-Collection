@@ -186,3 +186,11 @@ img {
 .navbar {
   position: fixed;
 }
+
+.black-text {
+  color: black;
+}
+
+.black-text:hover {
+  color: darkgray; 
+}
