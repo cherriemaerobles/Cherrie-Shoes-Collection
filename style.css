@@ -320,14 +320,20 @@ img {
   position: fixed;
 }
 
-.black-text {
-  color: black;
-}
-
-.black-text:hover {
-  color: darkgray; 
-}
-
 .text-justify {
   text-align: justify;
+}
+
+a.lead {
+  color: 6482AD; 
+  text-decoration: none; 
+}
+
+a.lead:hover {
+  color: 87A2FF;; 
+  text-decoration: underline; 
+}
+
+ul.list-unstyled {
+  margin-top: 15px; 
 }
