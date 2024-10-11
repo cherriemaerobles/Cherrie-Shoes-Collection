@@ -177,6 +177,109 @@
             </div>
         </div>
     </div>
+
+    <header class="p-3 text-bg-dark">
+        <div class="navbar">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
+                    <li><a href="products.html" class="nav-link px-2 text-white">Products</a></li>
+                    <li><a href="contact.html" class="nav-link px-2 text-white">Contact Us</a></li>
+                    <li><a href="feedback.html" class="nav-link px-2 text-white">Feedbacks</a></li>
+                </ul>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark text-white"><i class="fas fa-search"></i></span>
+                        <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    </div>
+                </form>
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html';">Login</button>
+                    <button type="button" class="btn btn-warning btn-outline-light me-2" onclick="window.location.href='signup.html';">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container mt-5">
+        <h1 class="display-5 fw-bold text-center mb-4">Contact Us</h1>
+        <p class="text-center">At Cherrie Shoes Collection, we value our customers and are here to assist you with any inquiries or concerns. Whether you need help with your order, have questions about our products, or just want to share your feedback, we’d love to hear from you!</p>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Address</h3>
+                <p>Cherrie Shoes Collection<br>Santo Tomas, Batangas , Philippines</p>
+    
+                <h3>Email</h3>
+                <p><a href="mailto:info@cherrieshoes.com">cherriemaerobles@gmail.com</a></p>
+    
+                <h3>Phone</h3>
+                <p><a href="tel:+63123456789">+63 995 174 9182</a></p>
+            </div>
+            <div class="col-md-6">
+                <h3>Social Media</h3>
+                <p>Stay connected with us on social media for the latest updates and promotions!</p>
+                <ul class="list-unstyled">
+                    <li><a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-google"></i> Google</a></li>
+                </ul>
+    
+                <h3>Customer Support</h3>
+                <p>Our customer support team is available Monday to Friday, from 8 AM to 5 PM.</p>
+    
+                <h3>Feedback</h3>
+                <p>We are always looking to improve. If you have any suggestions or feedback, please feel free to reach out.</p>
+            </div>
+        </div>
+    </main>
    
+    <main class="container mt-5">
+        <h1 class="display-5 fw-bold text-center mb-4">Feedback</h1>
+        <p class="text-center">We value your feedback! Please share your experience with us and help us improve.</p>
+    
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Feedback Form -->
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Feedback</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Share your experience..." required></textarea>
+                    </div>
+    
+                    <!-- Star Rating -->
+                    <div class="mb-3">
+                        <label class="form-label">Rate Us</label>
+                        <div class="star-rating">
+                            <i class="fas fa-star" id="star1" onclick="rate(1)"></i>
+                            <i class="fas fa-star" id="star2" onclick="rate(2)"></i>
+                            <i class="fas fa-star" id="star3" onclick="rate(3)"></i>
+                            <i class="fas fa-star" id="star4" onclick="rate(4)"></i>
+                            <i class="fas fa-star" id="star5" onclick="rate(5)"></i>
+                        </div>
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Attach a Picture</label>
+                        <input class="form-control" type="file" id="photo">
+                    </div>
+    
+                    <button type="submit" class="btn btn-dark">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
