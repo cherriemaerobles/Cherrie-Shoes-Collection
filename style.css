@@ -29,7 +29,7 @@ body {
 }
 
 .nav-left a{
-  color: #ffffff
+  color: #ffffff;
   }
 
 .nav-link:hover {
@@ -127,6 +127,7 @@ img {
   display: flex;
   flex-direction: column; 
   justify-content: space-between;
+  margin-left: 10px;
 }
 
 .box:hover {
