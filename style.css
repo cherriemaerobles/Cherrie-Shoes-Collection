@@ -30,12 +30,22 @@ body {
 
 .nav-left a{
   color: #ffffff;
+  display: flex;
   }
 
 .nav-link:hover {
   color: white; 
   transform: scale(1.1); 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  margin-right: 10px;
 }
 
 .nav-link::after {
@@ -171,16 +181,90 @@ img {
   color: #000; 
 }
 
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
 .input-group-text {
   border: none;
+  border: none;
+  padding: 0 10px;
 }
 
 .input-group-text i {
   margin-right: 0;
 }
 
+.form-control {
+  border: none;
+  background-color: #333;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: #bbb;
+}
+
 .form-control-dark {
   border-left: none; 
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-left {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+  }
+
+  .nav-link {
+      display: block;
+      padding: 10px 0;
+      width: 100%;
+  }
+
+  .d-flex {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  form {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .btn {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+      padding: 10px;
+  }
+
+  .nav-link {
+      padding: 8px 0;
+  }
+
+  .input-group-text, .form-control {
+      width: 100%;
+  }
+
+  .form-control {
+      padding: 8px;
+  }
+
+  .btn {
+      margin: 5px 0;
+      padding: 10px;
+  }
 }
 
 .navbar {
