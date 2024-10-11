@@ -194,3 +194,7 @@ img {
 .black-text:hover {
   color: darkgray; 
 }
+
+.text-justify {
+  text-align: justify;
+}
