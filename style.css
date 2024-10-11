@@ -188,7 +188,7 @@ img {
 
 .input-group-text {
   border: none;
-  border: none;
+  background-color: #343a40;
   padding: 0 10px;
 }
 
@@ -264,6 +264,41 @@ img {
   .btn {
       margin: 5px 0;
       padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-group {
+      flex-direction: column; /* Stack elements vertically */
+      width: 100%; /* Full width */
+  }
+
+  .input-group-text {
+      width: 100%; /* Full width for input group text */
+  }
+
+  .form-control {
+      width: 100%; /* Full width for input field */
+      margin-top: 5px; /* Spacing above the input */
+  }
+
+  .btn {
+      width: 100%; /* Full width for buttons */
+      margin-top: 5px; /* Spacing above buttons */
+  }
+
+  .btn:last-child {
+      margin-bottom: 0; /* Remove bottom margin for last button */
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+      padding: 10px; /* Increase padding for buttons on small screens */
+  }
+
+  .form-control {
+      padding: 10px; /* Increase padding for input field */
   }
 }
 
