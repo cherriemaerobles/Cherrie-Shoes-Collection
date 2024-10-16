@@ -15,7 +15,7 @@ img {
 }
 
 .img-hover-zoom:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); 
 }
 
 .row {
@@ -24,7 +24,7 @@ img {
 }
 
 body, html {
-  margin: 0;
+  margin-top: 60px;
   padding: 0;
   height: 100%; 
 }
@@ -35,11 +35,16 @@ body, html {
 }
 
 .navbar-container {
-  display: flex;               
-  justify-content: space-between; 
-  align-items: center;        
-  padding: 10px 20px;        
-  background-color: #343a40;    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #343a40;
+  z-index: 1000;  
+  position: fixed;
+  top: 0;         
+  width: 100%;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .logo-image {
@@ -64,25 +69,25 @@ body, html {
   color: #000; 
   text-decoration: none;
   padding: 10px 15px;
-  transition: color 0.3s ease, transform 0.3s ease;
-  position: relative; 
+  transition: color 0.3s ease, transform 0.3s ease; 
+  position: relative;
 }
 
 .nav-link:hover {
-  color: #F6E96B; 
-  transform: scale(1.1); 
+  color: #F6E96B;
+  transform: scale(1.1);
 }
 
 .nav-link::after {
   content: ''; 
-  display: block;
+  display: block; 
   height: 2px; 
   background: #F6E96B; 
   transition: width 0.3s ease; 
   width: 0; 
   position: absolute; 
-  left: 50%; 
-  bottom: -5px; 
+  left: 50%;
+  bottom: -5px;
   transform: translateX(-50%); 
 }
 
@@ -98,7 +103,7 @@ body, html {
 .search-bar {
   padding: 8px;
   border: none;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 20px; 
   outline: none;
   width: 150px; 
   transition: width 0.3s ease; 
@@ -135,7 +140,7 @@ body, html {
   }
 
   .search-toggle-button {
-    display: block;
+    display: block; 
   }
 
   .search-button {
@@ -193,9 +198,9 @@ body, html {
   color: white;
   font-size: 30px;
   cursor: pointer;
-  position: absolute; 
+  position: absolute;
   top: 10px;
-  right: 10px; 
+  right: 10px;
 }
 
 .overlay-screen {
@@ -211,7 +216,7 @@ body, html {
 
 @media (max-width: 925px) {
   .navbar-links {
-    display: none;
+    display: none; 
   }
 
   .hamburger-icon {
@@ -232,12 +237,16 @@ body, html {
 
 .about-text {
   text-align: justify;
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
   font-size: 15px;
 }
 
+.about-title{
+  margin-top: -50px;
+}
+
 .box {
-  width: 300px; 
+  width: 300px;
   height: 450px; 
   border: 1px solid #ddd; 
   border-radius: 8px; 
@@ -258,7 +267,7 @@ body, html {
 }
 
 .box:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: scale(1.05); 
   background-color: #f8f9fa; 
 }
@@ -269,7 +278,7 @@ body, html {
   border-radius: 8px; 
   margin-bottom: 10px; 
   max-height: 200px; 
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .product-title {
@@ -308,13 +317,13 @@ body, html {
 
 @media (max-width: 992px) {
   .box {
-      width: 90%;
+      width: 90%; 
   }
 }
 
 @media (max-width: 576px) {
   .box {
-      width: 100%;
+      width: 100%; 
   }
 }
 
@@ -350,10 +359,10 @@ body, html {
 
 footer {
   background-color: #f8f9fa; 
-  color: #343a40;
-  border-top: 1px solid #dee2e6;
+  color: #343a40; 
+  border-top: 1px solid #dee2e6; 
   padding: 20px 10px; 
-  font-size: 14px;
+  font-size: 14px; 
 }
 
 footer {
@@ -361,12 +370,12 @@ footer {
   color: #343a40; 
   border-top: 1px solid #dee2e6; 
   padding: 20px 10px; 
-  font-size: 12px; 
+  font-size: 12px;
 }
 
 footer {
     background-color: #f8f9fa; 
-    color: #343a40;
+    color: #343a40; 
     border-top: 1px solid #dee2e6; 
     padding: 20px 10px; 
     font-size: 12px; 
@@ -383,7 +392,7 @@ footer h3 {
 
 footer p {
     margin-bottom: 8px; 
-    font-size: 12px;
+    font-size: 12px; 
 }
 
 footer a {
@@ -400,4 +409,3 @@ footer a:hover {
         text-align: center;
     }
 }
-
