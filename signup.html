@@ -10,20 +10,32 @@
             font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between; 
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            margin:20px;
+            padding: 0;
+            background-image: url('images/bg.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto; 
         }
 
         .signup-container {
-            width: 300px;
+            width: 300px; 
+            max-width: 400px; 
             padding: 20px;
-            background-color: #fff;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: auto; 
         }
 
         h2 {
@@ -43,7 +55,7 @@
 
         .form-group input {
             width: 100%;
-            padding: 8px;
+            padding: 10px; 
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 3px;
@@ -51,8 +63,8 @@
 
         .form-group button {
             width: 100%;
-            padding: 8px;
-            background-color: #FFD700;;
+            padding: 10px;
+            background-color: #FFD700;
             color: white;
             border: none;
             border-radius: 3px;
@@ -100,14 +112,19 @@
         }
 
         .social-login img {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
 
         .terms {
             text-align: center;
             margin-top: 10px;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px; 
         }
 
         footer {
@@ -116,7 +133,7 @@
             padding: 15px;
             border-top: 1px solid #ddd;
             text-align: center;
-            margin-top: 20px;
+            margin-top: auto; 
         }
 
         footer p, footer a {
@@ -169,6 +186,9 @@
                 </button>
             </div>
         </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
     </div>
 
     <footer>
@@ -177,10 +197,13 @@
         <p><strong>Follow Us:</strong></p>
         <p>
             <a href="#">Facebook</a> | 
-            <a href="#">Google</a> 
-            <p><strong>Contact Us:</strong></p>
-        <p><a href= "#"> cherriemaerobles@gmail.com </a> | 
-            <a href="#"> +63 995 174 9182 </a></p>
+            <a href="#">Google</a>
+        </p>
+        <p><strong>Contact Us:</strong></p>
+        <p>
+            <a href="#">cherriemaerobles@gmail.com</a> | 
+            <a href="#">+63 995 174 9182</a>
+        </p>
     </footer>
 
     <script>
