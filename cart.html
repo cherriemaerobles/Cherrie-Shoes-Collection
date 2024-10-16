@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #28a745;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .quantity-button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .text-end {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="navbar-container">
+            <div class="navbar-links">
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="feedback.html" class="nav-link">Feedbacks</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <buttons class="search-button">
+                    <i class="fas fa-search"></i>
+                </buttons>
+                <button class="search-toggle-button" onclick="toggleSearch()">Search</button> 
+            </div>
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="action-buttons d-flex align-items-center">
+                <buttons type="button" class="btn btn-outline-light me-2" onclick="window.location.href='cart.html';">
+                    <i class="fas fa-shopping-cart"></i>
+                </buttons>
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='login.html';">Login</button>
+                <button type="button" class="btn btn-outline-light me-2" onclick="window.location.href='signup.html';">Sign-up</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="side-menu-container" id="sideMenu">
+        <img src="images/logo.png" alt="Logo" class="logo-image"> 
+        <button class="close-menu-button" onclick="toggleMenu()">&times;</button> 
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="feedback.html">Feedbacks</a>
+        <hr>
+        <button class="btn btn-outline-light side-menu-button" onclick="window.location.href='cart.html';">
+            <i class="fas fa-shopping-cart"></i> Cart
+        </button>
+        <button class="btn btn-outline-light side-menu-button" onclick="window.location.href='login.html';">Login</button>
+        <button class="btn btn-outline-light side-menu-button" onclick="window.location.href='signup.html';">Sign-up</button>
+        <button class="btn btn-outline-light side-menu-button" onclick="logout();">Logout</button>
+    </div>
+    
+    <div class="overlay-screen" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="container mt-5">
+        <h1 class="display-5 fw-bold text-body-emphasis text-center">Shopping Cart</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                    <img src="images/shoes 1.jpeg" alt="Converse High Cut" class="product-img">
+                    <h3 class="product-title">Converse High Cut</h3>
+                    <div class="price" id="price">₱2499.00</div>
+                    <div class="quantity-container">
+                        <button class="quantity-button" onclick="updateQuantity(-1)">-</button>
+                        <inputs type="number" id="quantity" class="quantity-input" value="1" min="1" onchange="calculateTotal()">
+                        <button class="quantity-button" onclick="updateQuantity(1)">+</button>
+                    </div>
+                    <button class="btn btn-danger" onclick="removeFromCart()">Remove</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-end mt-4">
+            <h3 id="total">Total: ₱2499.00</h3>
+            <button class="btn btn-success" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            let currentQuantity = parseInt(quantityInput.value) || 0;
+
+            if (currentQuantity + change >= 1) {
+                quantityInput.value = currentQuantity + change;
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const price = 2499; 
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            const total = price * quantity;
+
+            document.getElementById('total').innerText = 'Total: ₱' + total.toFixed(2);
+        }
+
+        function removeFromCart() {
+            alert('Item removed from cart.');
+        }
+
+        function checkout() {
+            alert('Proceeding to checkout.');
+        }
+
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('overlay');
+            sideMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function logout() {
+            alert('Logged out.');
+        }
+    </script>
+</body>
+</html>
